@@ -29,7 +29,7 @@ services:
       - redis
       - catalogue
   mysql:
-    image: spandanaerukulla/mysql:v1
+    image: spandanaerukulla/my-sql:v1
     container_name: mysql
   shipping:
     image: spandanaerukulla/shipping:v1

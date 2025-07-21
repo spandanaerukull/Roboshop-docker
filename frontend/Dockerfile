@@ -4,4 +4,4 @@ RUN rm -rf /etc/nginx/nginx.conf
 RUN rm -rf /etc/nginx/conf.d/default.conf
 # Ensure nginx.conf exists in the build context before adding
 ADD nginx.conf /etc/nginx/nginx.conf
-ADD src /usr/share/nginx/html/
+ADD static /usr/share/nginx/html/

@@ -1,8 +1,8 @@
 networks:
  default:
     driver: bridge
-    name: roboshop1
-
+    name: roboshop
+    external: true
 services:
   mongodb:
     image: spandanaerukulla/mongodb:v1

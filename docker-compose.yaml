@@ -25,8 +25,8 @@ services:
     image: spandanaerukulla/cart:v1
     container_name: cart
     depends_on:
-      - redis
       - catalogue
+      - redis
   mysql:
     image: spandanaerukulla/my-sql:v1
     container_name: mysql

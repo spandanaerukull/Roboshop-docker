@@ -36,35 +36,35 @@ services:
     depends_on:
       - mysql
       - cart
-  rabbitmq:
-    image: rabbitmq:3
-    container_name: rabbitmq
-    environment:
-      RABBITMQ_DEFAULT_USER: roboshop
-      RABBITMQ_DEFAULT_PASS: roboshop123
-  payment:
-    image: spandanaerukulla/payment:v1
-    container_name: payment
-    environment:
-       CART_HOST: cart
-       CART_PORT: 8080
-       USER_HOST: user
-       USER_PORT: 8080
-       AMQP_HOST: rabbitmq
-       AMQP_USER: roboshop
-       AMQP_PASSWORD: roboshop123
-    depends_on:
-      - rabbitmq
-      - cart
-      - user
-  frontend:
-    image: spandanaerukulla/frontend:v1
-    container_name: frontend
-    ports:
-      - "80:80"
-    depends_on:
-      - catalogue
-      - user
-      - cart
-      - shipping
-      - payment
+  # rabbitmq:
+  #   image: rabbitmq:3
+  #   container_name: rabbitmq
+  #   environment:
+  #     RABBITMQ_DEFAULT_USER: roboshop
+  #     RABBITMQ_DEFAULT_PASS: roboshop123
+  # payment:
+  #   image: spandanaerukulla/payment:v1
+  #   container_name: payment
+  #   environment:
+  #      CART_HOST: cart
+  #      CART_PORT: 8080
+  #      USER_HOST: user
+  #      USER_PORT: 8080
+  #      AMQP_HOST: rabbitmq
+  #      AMQP_USER: roboshop
+  #      AMQP_PASSWORD: roboshop123
+  #   depends_on:
+  #     - rabbitmq
+  #     - cart
+  #     - user
+  # frontend:
+  #   image: spandanaerukulla/frontend:v1
+  #   container_name: frontend
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - catalogue
+  #     - user
+  #     - cart
+  #     - shipping
+  #     - payment

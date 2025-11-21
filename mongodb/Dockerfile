@@ -17,4 +17,5 @@ COPY *.js /docker-entrypoint-initdb.d
 # This Dockerfile is used to create a MongoDB container with initialization scripts.
 # Copying initialization scripts to the appropriate directory
 # MongoDB will execute these scripts on the first startup
+# copying all .js files from the current directory to /docker-entrypoint-initdb.d in the container
 

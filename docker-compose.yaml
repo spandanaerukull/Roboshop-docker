@@ -3,16 +3,17 @@ networks:
     driver: bridge
     name: roboshop
     external: true
+  # Define volumes for stateful services  
 volumes:
   mongobd:
   redis:
   mysql:
-  rabbitmq:
+  rabbitmq: # all this volumes are equalent to docker volume create mongobd
 services:
   mongodb:
     image: spandanaerukulla/mongodb:v1
     container_name: mongodb
-    volumes:
+    volumes: # persist mongodb data
       - mongobd:/data/db
   catalogue:
     image: spandanaerukulla/catalogue:v1
